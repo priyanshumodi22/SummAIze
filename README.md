@@ -16,7 +16,7 @@
   <a href="#license">License</a>
 </p>
 
-<!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
+![screenshot](https://media.discordapp.net/attachments/950052287097749537/1114179348346441828/image.png?width=1381&height=676)
 
 ## Key Features
 
