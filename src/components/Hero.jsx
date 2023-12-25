@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { BsSunFill } from "react-icons/bs";
 
@@ -33,14 +33,14 @@ const Hero = () => {
           alt="logo"
           className="logo"
         />
-        <div className="flex items-center">
+        <div className="black_button flex items-center">
           <button
             onClick={handleThemeswitch}
-            className="black_toggle dark:bg-slate-950 rounded-full p-2 focus:outline-none"
+            className="black_toggle dark:bg-slate-950 focus:outline-none"
           >
             {theme === "dark" ? <FaMoon /> : <BsSunFill />}
           </button>
-          <button
+          {/* <button
             type="button"
             onClick={() =>
               window.open("https://github.com/priyanshumodi22/SummAIze")
@@ -48,7 +48,7 @@ const Hero = () => {
             className="black_btn dark:bg-slate-950 ml-4"
           >
             Github
-          </button>
+          </button> */}
         </div>
       </nav>
       <h1 className="head_text dark:text-slate-400">

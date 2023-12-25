@@ -117,12 +117,26 @@
 }
 
 .logo {
-  @apply w-72;
+  @apply w-72; /* Set default width for larger screens */
+
+  /* Media query for screens 425px or less */
+  @media (max-width: 425px) {
+    width: 13rem; /* Set width to 13rem for smaller screens */
+  }
 }
+
+
+.black_button
+{
+  @apply p-2 pl-2 
+}
+
 
 .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white  dark:hover:bg-slate-300 dark:border-gray-500 hover:text-black hover:border-black;
 }
+
+
 
 .black_toggle {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white  dark:hover:bg-slate-300 dark:border-gray-500 hover:text-black hover:border-black;
