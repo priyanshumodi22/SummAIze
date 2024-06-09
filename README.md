@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/priyanshumodi22/SummAIze"><img src="https://media.discordapp.net/attachments/950052287097749537/1113769920178700298/logo.png" alt="SummAIze" height="120" width="450"></a>
+  <a href="https://github.com/priyanshumodi22/SummAIze"><img src="https://media.discordapp.net/attachments/1142888467920064672/1249268215607984200/logo.png?ex=6666af30&is=66655db0&hm=39800296ce82e470e616db74f9fac8fd54ffd1c4f71494f53294125dc43330a5&=&format=webp&quality=lossless" alt="SummAIze" height="120" width="450"></a>
   <br>
   SummAIze
   <br>
@@ -16,7 +16,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://media.discordapp.net/attachments/950052287097749537/1114179348346441828/image.png?width=1381&height=676)
+![screenshot](https://media.discordapp.net/attachments/1142888467920064672/1249300684482805780/Screenshot_2024-06-09_132025.png?ex=6666cd6e&is=66657bee&hm=4b74e7494d583d4a9bc36c6b26780055cd2bf3e1270221220c27c3c8b2ee5e36&=&format=webp&quality=lossless&width=1035&height=671)
 
 ## Key Features
 
