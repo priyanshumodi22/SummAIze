@@ -28,7 +28,11 @@ const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
-        <img src="src\assets\logo.png" alt="SummAIze" className="logo" />
+        <img
+          src="https://media.discordapp.net/attachments/1142888467920064672/1249268215607984200/logo.png?ex=6666af30&is=66655db0&hm=39800296ce82e470e616db74f9fac8fd54ffd1c4f71494f53294125dc43330a5&=&format=webp&quality=lossless"
+          alt="SummAIze"
+          className="logo"
+        />
         <div className="black_button flex items-center">
           <button
             onClick={handleThemeswitch}
