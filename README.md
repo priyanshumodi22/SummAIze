@@ -54,7 +54,7 @@ SummAIze uses the following open source packages and APIs:
 
 ## Deployed
 
-[SummAIze](https://summaize.me/) is deployed using [Vercel](https://vercel.com/).
+[SummAIze](https://summaize.live/) is deployed using [Vercel](https://vercel.com/).
 
 ## License
 
