@@ -1,163 +1,69 @@
 import { useEffect, useState } from "react";
-import { copy, linkIcon, loader, tick } from "../assets";
-import { useLazyGetSummaryQuery } from "../services/article";
+import { FaMoon } from "react-icons/fa";
+import { BsSunFill } from "react-icons/bs";
 
-const Demo = () => {
-  const [article, setArticle] = useState({
-    url: "",
-    summary: "",
-    length: 3,
-  });
-
-  const [allArticles, setAllArticles] = useState([]);
-
-  const [copied_url, setCopied_url] = useState("");
-  const [copied_Summary, setCopied_Summary] = useState("");
-
-  const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+const Hero = () => {
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
-    const articlesfromLocalStorage = JSON.parse(
-      localStorage.getItem("articles")
-    );
-    if (articlesfromLocalStorage) {
-      setAllArticles(articlesfromLocalStorage);
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
     }
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { data } = await getSummary({
-      articleUrl: article.url,
-      length: article.length,
-    });
-
-    if (data?.summary) {
-      const newArticle = { ...article, summary: data.summary };
-      const updatedAllArticles = [newArticle, ...allArticles];
-
-      setArticle(newArticle);
-      setAllArticles(updatedAllArticles);
-      localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
-
-      console.log(newArticle);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
-  };
+  }, [theme]);
 
-  const handleCopy_url = (copyUrl) => {
-    setCopied_url(copyUrl);
-    navigator.clipboard.writeText(copyUrl);
-    setTimeout(() => setCopied_url(false), 3000);
-  };
-
-  const handleCopy_Summary = (copy_summary) => {
-    setCopied_Summary(copy_summary);
-    navigator.clipboard.writeText(copy_summary);
-    setTimeout(() => setCopied_Summary(false), 3000);
+  const handleThemeswitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <section className="mt-16 w-full max-w-4xl">
-      {/* search component */}
-      <div className="flex flex-col w-full gap-2">
-        <form
-          className="relative flex justify-center items-center "
-          onSubmit={handleSubmit}
-        >
-          <img
-            src={linkIcon}
-            alt="link_icon"
-            className="absolute left-0 my-2 ml-3 w-5"
-          />
-          <input
-            type="url"
-            placeholder="Enter a URL"
-            value={article.url}
-            onChange={(e) => setArticle({ ...article, url: e.target.value })}
-            required
-            className="url_input peer"
-          />
-          {/* input for length of paragraph */}
-          <input
-            type="number"
-            placeholder="Length"
-            value={article.length}
-            onChange={(e) =>
-              setArticle({ ...article, length: parseInt(e.target.value) })
-            }
-            required
-            className="length_input peer"
-          />
-
+    <header className="w-full flex justify-center items-center flex-col">
+      <nav className="flex justify-between items-center w-full mb-10 pt-3">
+        <img
+          src="https://media.discordapp.net/attachments/950052287097749537/1113769920178700298/logo.png?ex=66dd7691&is=66dc2511&hm=4f584e07e113f76279540a49a6b1b0f0715d6b374e95333525b1bf0695b5a183&=&format=webp&quality=lossless"
+          alt="SummAIze"
+          className="logo"
+        />
+        <div className="black_button flex items-center">
           <button
-            type="submit"
-            className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700"
+            onClick={handleThemeswitch}
+            className="black_toggle dark:bg-slate-950 focus:outline-none"
           >
-            ↵
+            {theme === "dark" ? <FaMoon /> : <BsSunFill />}
           </button>
-        </form>
-        {/* Browse URL history */}
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-scroll scrollbar">
-          {allArticles.map((item, index) => (
-            <div
-              key={`link-${index}`}
-              onClick={() => setArticle(item)}
-              className="link_card"
-            >
-              <div
-                className="copy_btn"
-                onClick={() => handleCopy_url(item.url)}
-              >
-                <img
-                  src={copied_url === item.url ? tick : copy}
-                  alt="copy_icon"
-                  className="w-[40%] h-[40%] object-contain"
-                />
-              </div>
-              <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
-                {item.url}
-              </p>
-            </div>
-          ))}
+          {/* <button
+            type="button"
+            onClick={() =>
+              window.open("https://github.com/priyanshumodi22/SummAIze")
+            }
+            className="black_btn dark:bg-slate-950 ml-4"
+          >
+            Github
+          </button> */}
         </div>
-      </div>
-      {/* Summary */}
-      <div className="my-10 max-w-full flex justify-center items-center">
-        {isFetching ? (
-          <img src={loader} alt="loader" className="w-20 h-20 object-contain" />
-        ) : error ? (
-          <p className="font-inter font-bold text-black">
-            Well, that wasn&apos;t supposed to happen... Please try again later.
-            <br />
-            <span className="font-satoshi font-normal text-gray-700">
-              {error?.data?.error}
-            </span>
-          </p>
-        ) : (
-          article.summary && (
-            <div className="flex flex-col gap-3">
-              <h2 className="font-satoshi font-bold text-gray-600 text-xl dark:text-white">
-                Article <span className="blue_gradient">Summary</span>
-              </h2>
-              <div className="summary_box">
-                <p>{article.summary}</p>
-                <div
-                  className="copy_btn"
-                  onClick={() => handleCopy_Summary(article.summary)}
-                >
-                  <img
-                    src={copied_Summary === article.summary ? tick : copy}
-                    alt="copy_icon"
-                    className="w-[40%] h-[40%] object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-          )
-        )}
-      </div>
-    </section>
+      </nav>
+      <h1 className="head_text dark:text-slate-400">
+        Summarize Articles with <br className="max-md:hidden" />
+        <span className="orange_gradient">OpenAI GPT-4</span>
+      </h1>
+      <h2 className="desc dark:text-slate-400">
+        Summ<span className="text-orange-500">AI</span>ze is a powerful
+        open-source article summarizer that condenses long articles into brief,
+        easy-to-understand summaries. It simplifies reading by providing clear
+        and concise information, making it a valuable tool for quick
+        comprehension.
+      </h2>
+    </header>
   );
 };
 
-export default Demo;
+export default Hero;
