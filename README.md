@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/priyanshumodi22/SummAIze"><img src="https://media.discordapp.net/attachments/950052287097749537/1113769920178700298/logo.png" alt="SummAIze" height="120" width="450"></a>
+  <a href="https://github.com/priyanshumodi22/SummAIze"><img src="https://media.discordapp.net/attachments/950052287097749537/1113769920178700298/logo.png?ex=66dd7691&is=66dc2511&hm=4f584e07e113f76279540a49a6b1b0f0715d6b374e95333525b1bf0695b5a183&=&format=webp&quality=lossless" alt="SummAIze" height="120" width="450"></a>
+
   <br>
   SummAIze
   <br>
@@ -16,7 +17,8 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://media.discordapp.net/attachments/950052287097749537/1114179348346441828/image.png?width=1381&height=676)
+![screenshot](https://media.discordapp.net/attachments/950052287097749537/1282084439639457802/image.png?ex=66de11ae&is=66dcc02e&hm=ebc301a7c384ec093bf0984a27a3fed0b78c0aefc4ae0a7cfe10847355fbe47a&=&format=webp&quality=lossless&width=1125&height=671)
+
 
 ## Key Features
 
@@ -54,7 +56,7 @@ SummAIze uses the following open source packages and APIs:
 
 ## Deployed
 
-[SummAIze](https://summaize.me/) is deployed using [Vercel](https://vercel.com/).
+[SummAIze](https://summaize.live/) is deployed using [Vercel](https://vercel.com/).
 
 ## License
 
