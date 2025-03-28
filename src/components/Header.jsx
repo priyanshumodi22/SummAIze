@@ -34,7 +34,7 @@ const Header = () => {
             onClick={handleThemeswitch}
             className="black_toggle dark:bg-slate-950 focus:outline-none"
           >
-            {theme === "dark" ? <FaMoon /> : <BsSunFill />}
+            {theme === "dark" ? <BsSunFill /> : <FaMoon />}
           </button>
           {/* <button
             type="button"
