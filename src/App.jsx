@@ -1,22 +1,21 @@
-import React from 'react'
-import Hero from './components/Hero'
-import Demo from './components/Demo'
+import Header from "./components/Header";
+import ArticleSummary from "./components/Summary";
 
-import './App.css'
+import "./App.css";
 
 const App = () => {
   return (
     <main>
-      <div className='main  dark:bg-black'>
-          <div className='gradient'/>
+      <div className="main  dark:bg-black">
+        <div className="gradient" />
       </div>
-      
-      <div className='app'>
-        <Hero />
-        <Demo />
+
+      <div className="app">
+        <Header />
+        <ArticleSummary />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;

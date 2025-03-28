@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
-const Demo = () => {
+const ArticleSummary = () => {
   const [article, setArticle] = useState({
     url: "",
     summary: "",
@@ -96,7 +96,7 @@ const Demo = () => {
             ↵
           </button>
         </form>
-        {/* Browse URL history */}
+        {/* Search URL history */}
         <div className="flex flex-col gap-1 max-h-60 overflow-y-scroll scrollbar">
           {allArticles.map((item, index) => (
             <div
@@ -160,4 +160,4 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+export default ArticleSummary;
